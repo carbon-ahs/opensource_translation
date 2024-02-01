@@ -63,65 +63,66 @@
 ফিক্সের ডকুমেন্টেশন করুন। 
 টেস্টকেস উল্লেখ করা একটি ভাল আইডিয়া, কিছু কিছু প্রজেক্টে বাগ ফিক্সারদের বাধ্যতামূলক ভাবে টেস্ট ইনক্লুড করতে হয়। যেহেতু আপনি একটি অপরিচিত কোডবেজে খুচাখুচি করছেন সুতরাং আপনার নোট রাখা উচিত। আপনি যদি বাগ ফিক্স নাও করতে পারেন তবুও টিকিট ডকুমেন্ট করুন যে আপনি কি খুজে পেলেন। আপনার খুজে পাওয়া "রত্ন" আপনার পরে যে বাগ ফিক্স করতে আসবে তারজন্য অনেক হেল্পফুল হবে।
 
-8. **Write a test**: Most projects have a test suite that tests the code, but it's hard to imagine a test suite that couldn't have more tests added to it.
 ৮. **টেস্ট রাইটিং**: অধিকাংশ প্রজেক্টে টেস্ট সুইট থাকে। টেস্ট সুইটে আপনি আরো টেস্ট এড করতে পারেন। 
-Use a test coverage tool like gcov for C, or Devel::Cover for Perl to identify areas in the source code that aren't tested by the test suite.
 আপনি বিভিন্ন টেস্ট কভারিং টুল (gcov for C / Devel::Cover for Perl) ব্যবহার করে টেস্ট সুইটে সোর্সকোডের আনটেস্টেড এরিয়া বের করতে পারেন। 
-Then, add a test to the suite to cover it.
 তারপর একটি নতুন টেস্ট যুক্ত করে দিন।
 
-9. **Silence a compiler warning**: The build process for many C-based projects often spew the odd compiler warning flag to the screen.
 ৯. **কম্পাইলার ওয়ার্নিং সাইলেন্স করা**: C-based প্রজেক্টের বিল্ড প্রসেসের সময় প্রায়ই কম্পেইলার ওয়ার্নিং ফ্লাগ দেখায়। 
-These warnings are usually not indicators of a problem, but they can look like it.
 এই ওয়ার্নিং গুলো হয়তো সমস্যাকে দিকনির্দেশ করে না কিন্তু এটি প্রবলেম এর মতই দেখায়।
-
-Having too many warnings can make the compiler sound like it's crying wolf.
 অনেক বেশি ওয়ার্নিং থাকলে মনে হয় কম্পেইলার শীতের রাতে শিয়ালের হুক্কাহুয়া করছে। 
 
-Check to see if the code could actually be hiding a bug. If not, modifying the source to silence helps to hide these false positives.
-কোডে কোন লুয়ানো বাগ আছে কিনা তা চেক করুন। যদি না থাকে, সোর্সকোড কে এমনভাবে মডিফিকেসন করুন যাতে এইসব ফলস পজেটিভ গুলো সাইলেন্ট হয়ে যায়।
+কোডে কোন লুকানো বাগ আছে কিনা চেক করুন। যদি না থাকে, সোর্সকোড কে এমনভাবে মডিফিকেসন করুন যাতে এইসব ফলস পজেটিভ সাইলেন্ট হয়ে যায়।
 
-10. **Add a comment**:
 ১০. **কমেন্ট যুক্ত করা**:
-When you're digging through the code, you may find some spots that are confusing.
 সোর্সকোডের ভেতরে ধুকে আপনি দেখতে পাবেন কিছু কিছু অংশ খুবই কনফিউজিং। 
-Chances are if you were confused, others will be  as well. Document them in the code and submit a patch.
 যদি আপনি কোডে খেই হারিয়ে ফেলেন তবে ধরে নেয়া যায় অন্য সবাইও এই বিপদে পড়ছে। এক্ষেত্রে কোডে ডকুমেন্ট করুন এবং একটি প্যাচ সাবমিট করুন।
-Work with Documentation
-**ডকুমেন্টেসন নিয়ে কাজ করা**
-Documentation is typically the part of a project that gets short shrift.
-ডকুমেন্টশন হচ্ছে প্রজেক্টের সৎ পুত্র! 
-It also can suffer from having been written from the point of view of those who are familiar with the project, rather than through the eyes of someone just getting into it.
-আবার ডকুমেন্টেশন মাঝে মাঝে এমন কারো দৃষ্টিভংগি (point of view) থেকে লেখা হয়। কিন্তু এমন হওয়া উচিত এটি যেন নতুন কেউ পড়ে যেন বুঝতে পারে। 
-If you've ever read docs for a project where you think, "It's as though this manual expects that I already know how to use the package," you know what I'm talking about.
-আপনি যদি 
-Often a set of fresh eyes can point out deficiencies in the documentation that those close to the project don't notice.
 
-11. **Create an example**: There is no project that has too many how-to examples.
+
+**ডকুমেন্টেসন নিয়ে কাজ করা**
+ডকুমেন্টশন হচ্ছে প্রজেক্টের সৎ পুত্র! 
+ডকুমেন্টেশন মাঝে মাঝে এমন কারো দৃষ্টিকোণ (point of view) থেকে লেখা হয় যেন সে ইতিমধ্যে প্রজেক্টের সাথে পরিচিত। কিন্তু এমন হওয়া উচিত এটি যেন নতুন কেউ পড়ে যেন বুঝতে পারে। 
+ধরুন, আপনি ডকুমেন্টেশন পড়ছেন। পড়তে পড়তে মনে হলো, "এত কঠিন ভাবে লিখা! ম্যানুয়াল লেখাই হইছে এমন ভেবে যেন আমি প্যাকেজের এক্সপার্ট। এর আগামাথা কিছুই বুঝতেছি না।" - এমন হওয়া উচিত নয়।
+যারা প্রজেক্ট ডেভেলপমেন্ট এর সাথে সরাসরি যুক্ত নয় তারা খুব দ্রুত ডকুমেন্টেশনের এমন দুর্বলতা খুজে বের করতে পারেন।
+
+১১. **উদাহরণ তৈরি করা**: অনেক ওপেন সোর্স প্রজেক্টে how-to example থাকে না, থাকলেও খুব বেশি থাকে না।
 Whether it's a web API, a library of routines, a GUI app like Gimp or a command line tool,
 a good example of proper usage can more clearly and quickly explain proper usage of software than pages of documentation.
+প্রজেক্টের ওইয়েব এপিআই হোক, কোন লাইব্রেরি হোক, Gimp এর মত GUI সফটয়ার হোক অথবা কমান্ড লাইন টুল হোক, how-to example দিস্তা দিস্তা ডকুমেন্টেশনের চেয়ে ভাল কাজ করে। 
 For an API or library, create an example program that uses the tool. This could even be extracted from code you've written, trimmed down to the bare necessities.
+API বা library এর জন্য এই টুলগুলো ব্যবহার করে প্রোগ্রাম লিখতে পারেন। যেটুকু না করলেই নয়, আপনার লিখা কোড থেকেই প্রোগ্রামটি বের করে আনতে পারেন।
 For a tool, show real-world examples of how you've used it in your daily life. If you’re visually oriented,
 consider creating a screen-capture of an important process, such as how to install the application.
+এটাও দেখাতে পারেন যে, আপনার দৈনন্দিন কাজে কিভাবে এই টুলগুলো ব্যবহার করেছেন। গুরুত্বপুর্ন প্রসেস (যেমন, সফটওয়্যার কিভাবে ইন্সটল করবে) স্ক্রিন শট নিয়ে দেখাতে পারেন। 
 
 Work with Community
+**কমুনিটির সাথে কাজ করা** 
 Open source is only partly about code. Community makes open source work. Here are ways you can help build it up.
-
+ওপেন সোর্স প্রজেক্টের একটি অংশ কোড। কমুনিটিই আসলে ওপেন সোর্স প্রজেক্ট কাজ করায়। আপনি কমুনিট বানাতে কাজ করতে পারেন।
 12. **Answer a question**: The best way to help build the community is by helping others.
+১২. **প্রশ্নের উত্তর দেয়া**: কমুনিটি বানাতে অন্যদের সাহায্য করা সবচেয়ে ভাল উপায়।
 Answering a question, especially from someone who is just getting their feet wet, is crucial to helping the project grow and thrive.
+প্রশ্নের উত্তর দিন। বিশেষত যারা মাত্র শুরু করছে। অন্যদের সাহায্য করার মাধ্যমেই প্রজেক্ট বড় হয়। 
 The time you take to help a beginner, even if they're asking a question where you could easily throw back a quick "RTFM," pays off down the road in getting another active member of the community.
+বিগিনাররা অনেক সময় এমন কোশ্চেন করে যা ডকুমেন্টেশন দেখলেই সহজে সমাধান পাওয়া যায়। তবুও, যখন আপনি একজন বিগিনারকে সাহায্য করবেন, আপনি কমুনিটির আরেকজন একটিভ মেম্বার পাওয়ার রাস্তা সুগম করলেন।  
 Everyone starts out somewhere, and projects need a constant inflow of people if they're to stay vital.
-
+সবাই কোথাও না কোথাও শুরু তো করে! প্রজেক্টে নতুন মানুষের আনাগোনা না থাকলে প্রানশক্তি কমে যায়।  
 13. **Write a blog post**:
+১৩. **ব্লগপোস্ট লিখা**:
 If you've got a blog, write about your experiences with the project that you're using.
+আপনার কোন ব্লগ থাকলে সেখানে আপনার প্রজেক্টের সাথে অভিজ্ঞতা সম্পর্কে লিখতে পারেন।
 Tell about a problem you faced using the software and what you did to solve it.
+আপনার কোন সমস্যা সফটওয়্যার টি সলভ করেছে সেই নিয়ে লিখালিখি করতে পারেন। 
 You'll be helping in two ways, both by helping keep the project on the minds of others around you,
 and by creating a record for anyone else who has your problem in the future  and searches the web for the answer.
+লিখালিখিতে দুটো কাজ হবে। আপনার আশেপাশের লোকজন প্রজেক্ট সম্পর্কে অবগত হবে। আবার ভবিষ্যতে আপনার মত একই সমস্যায় যে পরবে সে এই রেকর্ড দেখে নিজের গা বাচাতে পারবে। 
 (A blog of your technical adventures is also an excellent way to show real-world experience with the software in question next time you go hunting for a job using it.)
-
+(টেক যাত্রার ব্লগ জব খুজে পেতে সাহায্য করে। আপনি real-world experience দেখাতে পারবেন!!)
 14. **Improve a website**:
+১৪. **ওয়েব সাইট ইম্প্রুভ করা**:
 If you've got skills in web design and can help improve the website, and thus the public-facing image of the project, that's time well spent.
+আপনার ওয়েব ডিজাইন স্কিল থাকলে প্রজেক্টের সাইট ইম্প্রুভ করে দিতে পারেন। ওয়েব সাইট হচ্ছে প্রজেক্টের মুখপাত্র। এটা আপনার মূল্যবান সময়ের উত্তম ব্যবহার হতে পারে। 
 Perhaps the project could use a graphic overhaul, or a logo to identify the project.
+এমন হতে পারে প্রজেক্টে কিছু গ্রাফিক কন্টেন্ট লাগতে পারে। প্রজেক্ট কে রিপ্রেজেন্ট করতে লোগো লাগতে পারে। যে কোন প্রজেক্ট লিডারই এমন হেল্প কে অভিবাদন জানাবে! 
 These may be skills lacking in the community. I know I'd love it if I could get some graphic design help on my projects' websites.
   
 15. **Write technical documentation**
