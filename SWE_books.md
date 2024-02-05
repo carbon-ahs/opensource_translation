@@ -213,7 +213,7 @@ https://a.co/d/3gtNJhl
 
 Helpful for interviewing at big tech.
 
-28. Radical Candor 📚
+28. Radical Candor 📚 
 https://a.co/d/bmrAuLI
 
 (not software engineering but was helpful in developing my communication skills)
